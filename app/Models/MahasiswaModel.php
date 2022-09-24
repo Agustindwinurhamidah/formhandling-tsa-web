@@ -8,9 +8,9 @@ use Illuminate\Database\Eloquent\Model;
 class MahasiswaModel extends Model
 {
     use HasFactory;
-    protected $table = 'user';
+    protected $table = 'users';
     protected $primaryKey = 'user_id';
-    protected $fillable = ['username', 'nama', 'email', 'password', 'avatar'];
+    protected $fillable = ['username', 'name', 'email', 'password', 'berkas'];
 
     public $timestamps = false;
 }

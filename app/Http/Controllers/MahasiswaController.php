@@ -38,9 +38,10 @@ class MahasiswaController extends Controller
      */
     public function store(Request $request)
     {
+        //return $request;
         $rules = [
             'username' => 'required|alpha_dash|min:4|max:20|unique:App\Models\MahasiswaModel',
-            'nama' => 'required|string|max:50',
+            'name' => 'required|string|max:50',
             'email' => 'required|unique:App\Models\MahasiswaModel',
             'password' => 'required|min:4|max:10|unique:App\Models\MahasiswaModel',
             'berkas' => 'required|mimes:jpg,png|max:100'
@@ -60,10 +61,10 @@ class MahasiswaController extends Controller
 
         MahasiswaModel::create([
             'username' => $request->input('username'),
-            'nama' => $request->input('nama'),
+            'name' => $request->input('name'),
             'email' => $request->input('email'),
             'password' => $request->input('password'),
-            'avatar' => $image_name
+            'berkas' => $image_name
         ]);
 
         return view('index')->with('success', 'Data berhasil disimpan');
@@ -107,7 +108,7 @@ class MahasiswaController extends Controller
     {
         $rules = [
             'username' => 'required|alpha_dash|min:4|max:20|unique:App\Models\MahasiswaModel',
-            'nama' => 'required|string|max:50',
+            'name' => 'required|string|max:50',
             'email' => 'required|unique:App\Models\MahasiswaModel',
             'password' => 'required|min:4|max:10|unique:App\Models\MahasiswaModel',
             'berkas' => 'required|mimes:jpg,png|max:100'
@@ -137,10 +138,10 @@ class MahasiswaController extends Controller
         MahasiswaModel::where('user_id', $id)
                 ->update([
                     'username' => $request->input('username'),
-                    'nama' => $request->input('nama'),
+                    'name' => $request->input('name'),
                     'email' => 'required|unique:App\Models\MahasiswaModel',
                     'password' => 'required|min:4|max:10|unique:App\Models\MahasiswaModel',
-                    'avatar' => $image_name
+                    'berkas' => $image_name
                 ]);
 
 

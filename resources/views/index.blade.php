@@ -7,7 +7,7 @@
         <form method="POST" action="{{url('mahasiswa')}}" enctype="multipart/form-data">
             @csrf
         Username <input type="text" name="username" required><br>
-        Nama <input type="text" name="nama" required><br>
+        Nama <input type="text" name="name" required><br>
         Email <input type="email" name="email" required><br>
         Password <input type="password" name="password" required><br>
         File <input type="file" name="berkas" required accept=".jpg,.png">
